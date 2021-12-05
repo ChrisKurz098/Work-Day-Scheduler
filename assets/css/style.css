@@ -69,3 +69,27 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+/*my settings*/
+#textSlot{
+  height: 60px;
+  overflow-wrap: break-word;
+  overflow:auto;
+  
+background-color: white;
+  margin-top: 10px;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.timeSlot{
+  background-color: #2d77c0;
+}
+
+.daySlot{
+  text-align: center;
+  padding-top: 30px;
+}
+.submitBtn{
+  background-color: #c0752d;
+}
