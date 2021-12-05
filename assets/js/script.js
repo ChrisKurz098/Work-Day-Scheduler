@@ -82,6 +82,7 @@ $('#toDoList').on("click", "#textSlot", function () {
 
     $(this).replaceWith(textInput);
     $(textInput).trigger('focus');
+    textInput.select();
 
 });
 ///check if click outside of text space
@@ -116,6 +117,7 @@ function main() {
     ///set current date to last date saved by user
     let currentDisplayDate = tasksArray[0].date;
     $('#currentDay').text("Todays is: " + currentDisplayDate);
+    colorByTime();
    return;
     //////////////////////////////////////////////////////////////////
 }
@@ -123,3 +125,28 @@ function main() {
 
 main();
 
+////check if time passed each min
+function colorByTime(){
+    const getTime = new Date();
+    const curTime = getTime.getHours()
+    let timeArray = ['nine', 'ten', 'eleven', 'twelve', 'one', 'two', 'three', 'four', 'five'];
+    for (i = 0; i < 9; i++) {
+        let time = timeArray[i];
+        let slot = document.querySelector('.timeSlot[data-time="'+ time +'"]');
+        slotTime = slot.querySelector('.daySlot').dataset.num;
+        
+
+
+        if (slotTime>curTime){
+            slot.style.backgroundColor  = "#313A75";
+        }else if (slotTime < curTime){
+            slot.style.backgroundColor = "#A9383B";
+        }
+        else {slot.style.backgroundColor = "#408E2F";}
+    }
+    console.log("COLOR");
+    return;
+}
+
+//check colors every min
+setInterval(colorByTime, 60500);
