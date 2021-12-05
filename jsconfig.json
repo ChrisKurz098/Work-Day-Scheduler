@@ -1,0 +1,12 @@
+{
+    "typeAcquisition": {
+        "include": [
+            "javascript",
+            "jquery",
+            "jqueryui",
+            "moment",
+            "luxon"
+        ]
+    }
+
+}
